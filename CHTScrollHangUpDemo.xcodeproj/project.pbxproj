@@ -14,6 +14,10 @@
 		AEBA00591E5429E30067E6E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEBA00581E5429E30067E6E5 /* Assets.xcassets */; };
 		AEBA005C1E5429E30067E6E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEBA005A1E5429E30067E6E5 /* LaunchScreen.storyboard */; };
 		AEBA00641E5431C50067E6E5 /* img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEBA00631E5431C50067E6E5 /* img.jpg */; };
+		AEBA00671E5444810067E6E5 /* CHTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA00661E5444810067E6E5 /* CHTSearchBar.m */; };
+		AEBA006A1E5445440067E6E5 /* UIColor+CHTExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA00691E5445440067E6E5 /* UIColor+CHTExtend.m */; };
+		AEBA006C1E5445BB0067E6E5 /* search_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBA006B1E5445BB0067E6E5 /* search_clear.png */; };
+		AEBA006E1E544D270067E6E5 /* glassSelectImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBA006D1E544D270067E6E5 /* glassSelectImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,12 @@
 		AEBA005B1E5429E30067E6E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEBA005D1E5429E30067E6E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEBA00631E5431C50067E6E5 /* img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img.jpg; sourceTree = "<group>"; };
+		AEBA00651E5444810067E6E5 /* CHTSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTSearchBar.h; sourceTree = "<group>"; };
+		AEBA00661E5444810067E6E5 /* CHTSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSearchBar.m; sourceTree = "<group>"; };
+		AEBA00681E5445440067E6E5 /* UIColor+CHTExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CHTExtend.h"; sourceTree = "<group>"; };
+		AEBA00691E5445440067E6E5 /* UIColor+CHTExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CHTExtend.m"; sourceTree = "<group>"; };
+		AEBA006B1E5445BB0067E6E5 /* search_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_clear.png; sourceTree = "<group>"; };
+		AEBA006D1E544D270067E6E5 /* glassSelectImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glassSelectImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +71,16 @@
 			isa = PBXGroup;
 			children = (
 				AEBA00631E5431C50067E6E5 /* img.jpg */,
+				AEBA006B1E5445BB0067E6E5 /* search_clear.png */,
+				AEBA006D1E544D270067E6E5 /* glassSelectImage.png */,
 				AEBA004F1E5429E20067E6E5 /* AppDelegate.h */,
 				AEBA00501E5429E20067E6E5 /* AppDelegate.m */,
 				AEBA00521E5429E20067E6E5 /* ViewController.h */,
 				AEBA00531E5429E20067E6E5 /* ViewController.m */,
+				AEBA00651E5444810067E6E5 /* CHTSearchBar.h */,
+				AEBA00661E5444810067E6E5 /* CHTSearchBar.m */,
+				AEBA00681E5445440067E6E5 /* UIColor+CHTExtend.h */,
+				AEBA00691E5445440067E6E5 /* UIColor+CHTExtend.m */,
 				AEBA00551E5429E30067E6E5 /* Main.storyboard */,
 				AEBA00581E5429E30067E6E5 /* Assets.xcassets */,
 				AEBA005A1E5429E30067E6E5 /* LaunchScreen.storyboard */,
@@ -141,7 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBA006E1E544D270067E6E5 /* glassSelectImage.png in Resources */,
 				AEBA005C1E5429E30067E6E5 /* LaunchScreen.storyboard in Resources */,
+				AEBA006C1E5445BB0067E6E5 /* search_clear.png in Resources */,
 				AEBA00591E5429E30067E6E5 /* Assets.xcassets in Resources */,
 				AEBA00571E5429E30067E6E5 /* Main.storyboard in Resources */,
 				AEBA00641E5431C50067E6E5 /* img.jpg in Resources */,
@@ -158,6 +176,8 @@
 				AEBA00541E5429E20067E6E5 /* ViewController.m in Sources */,
 				AEBA00511E5429E20067E6E5 /* AppDelegate.m in Sources */,
 				AEBA004E1E5429E20067E6E5 /* main.m in Sources */,
+				AEBA00671E5444810067E6E5 /* CHTSearchBar.m in Sources */,
+				AEBA006A1E5445440067E6E5 /* UIColor+CHTExtend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
