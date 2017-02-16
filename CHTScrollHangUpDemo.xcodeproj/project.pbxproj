@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEA26CB31E558BA300E0A1A2 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA26CB21E558BA300E0A1A2 /* img.png */; };
 		AEBA004E1E5429E20067E6E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA004D1E5429E20067E6E5 /* main.m */; };
 		AEBA00511E5429E20067E6E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA00501E5429E20067E6E5 /* AppDelegate.m */; };
 		AEBA00541E5429E20067E6E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA00531E5429E20067E6E5 /* ViewController.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AEA26CB21E558BA300E0A1A2 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 		AEBA00491E5429E20067E6E5 /* CHTScrollHangUpDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHTScrollHangUpDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBA004D1E5429E20067E6E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEBA004F1E5429E20067E6E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		AEBA004B1E5429E20067E6E5 /* CHTScrollHangUpDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AEA26CB21E558BA300E0A1A2 /* img.png */,
 				AEBA00631E5431C50067E6E5 /* img.jpg */,
 				AEBA006B1E5445BB0067E6E5 /* search_clear.png */,
 				AEBA006D1E544D270067E6E5 /* glassSelectImage.png */,
@@ -163,6 +166,7 @@
 				AEBA00591E5429E30067E6E5 /* Assets.xcassets in Resources */,
 				AEBA00571E5429E30067E6E5 /* Main.storyboard in Resources */,
 				AEBA00641E5431C50067E6E5 /* img.jpg in Resources */,
+				AEA26CB31E558BA300E0A1A2 /* img.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +342,7 @@
 				AEBA00621E5429E30067E6E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

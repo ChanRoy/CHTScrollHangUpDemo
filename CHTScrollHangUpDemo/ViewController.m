@@ -28,6 +28,8 @@ static CGFloat const kImgHeight = 200;
 @property (nonatomic, strong) UIView *topImageCoverView;
 @property (nonatomic, strong) CHTSearchBar *fakeSearchBar;
 @property (nonatomic, assign) CGFloat alphaY;
+@property (nonatomic, strong) UIImageView *navBarHairlineImageView;
+
 @end
 
 @implementation ViewController
@@ -37,6 +39,10 @@ static CGFloat const kImgHeight = 200;
     
 //    self.navigationController.navigationBar.hidden = YES;
     
+    [self getBackView:self.navigationController.navigationBar Color:[UIColor clearColor]];
+    _navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    _navBarHairlineImageView.hidden = YES;
+    
     [self.view addSubview:self.tableView];
     [self.tableView addSubview:self.headerImageView];
     self.fakeNavBar.hidden = NO;
@@ -44,6 +50,13 @@ static CGFloat const kImgHeight = 200;
     //搜索栏---这个view放在tableview上，跟随滑动。到达navigationbar位置时隐藏
     _fakeSearchBar = [[CHTSearchBar alloc] initWithFrame:CGRectMake(22, -45, SCREEN_WIDTH-44, 35)];
     [self.tableView addSubview:_fakeSearchBar];
+    
+    //遮盖层---制造渐变过程
+    _topImageCoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(_headerImageView.frame), CGRectGetHeight(_headerImageView.frame) + 10)];
+    
+    _topImageCoverView.backgroundColor = [UIColor colorWithHexString:@"#333333"];
+    _topImageCoverView.alpha = 0;
+    [_headerImageView addSubview:_topImageCoverView];
 }
 
 #pragma mark - lazy load
@@ -64,17 +77,9 @@ static CGFloat const kImgHeight = 200;
     
     if (_headerImageView == nil) {
         _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, -kImgHeight, CGRectGetWidth(self.view.frame), kImgHeight)];
-        _headerImageView.image = [UIImage imageNamed:@"img.jpg"];
+        _headerImageView.image = [UIImage imageNamed:@"img"];
         //UIViewContentModeScaleAspectFill，保证拉升时长宽一起拉升
         _headerImageView.contentMode = UIViewContentModeScaleAspectFill;
-        
-        //遮盖层---制造渐变过程
-        _topImageCoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(_headerImageView.frame), CGRectGetHeight(_headerImageView.frame))];
-        
-        _topImageCoverView.backgroundColor = [UIColor colorWithHexString:@"#333333"];
-        _topImageCoverView.alpha = 0;
-        [_headerImageView addSubview:_topImageCoverView];
-        
         
     }
     return _headerImageView;
@@ -100,6 +105,69 @@ static CGFloat const kImgHeight = 200;
     }
     return _fakeNavBar;
 }
+
+- (void)getBackView:(UIView *)View Color:(UIColor *)color{
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    if ([View isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
+        //背景颜色设置
+        [UIView animateWithDuration:0.35 animations:^{
+            
+            View.backgroundColor = color;
+            [UIView commitAnimations];
+        }];
+    }else if ([View isKindOfClass:NSClassFromString(@"_UIBackdropView")]){
+        
+        //将_UINavigationBarBackground上面的遮罩层隐藏
+        View.hidden = YES;
+    }
+    
+    //iOS10 navigationbar 有点不一样，先这样设置
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10) {
+        
+        if ([View isKindOfClass:NSClassFromString(@"UIVisualEffectView")]){
+            
+            View.backgroundColor = color;
+            
+            //首页隐藏掉遮盖层，其他页面不用隐藏，隐藏了就没有颜色
+            if ([self isKindOfClass:NSClassFromString(@"ViewController")]) {
+                View.hidden = YES;
+            }else{
+                
+                View.hidden = NO;
+            }
+        }
+    }
+    
+    for (UIView *view in View.subviews) {
+        [UIView animateWithDuration:0 animations:^{
+            [self getBackView:view Color:color];       //递归遍历NavBar视图
+            [UIView commitAnimations];
+        }];
+        
+    }
+    
+    //iOS10有点坑爹，先这样设置
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 10){
+        
+        [self.navigationController.navigationBar setBarTintColor:color];
+    }
+}
+
+- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+
 
 #pragma mark - tableview datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -150,6 +218,9 @@ static CGFloat const kImgHeight = 200;
                 _alphaY = 0.0;
             }
         }
+        
+        NSLog(@"***%.2f",_alphaY);
+        
         //控制---topImageView上遮盖层效果和navigationbar上searchBar的出现和隐藏
         [self moveConfigTopBgView];
         
