@@ -51,6 +51,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE9C0CB41E59E40000B06135 /* CHTSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				AEBA00651E5444810067E6E5 /* CHTSearchBar.h */,
+				AEBA00661E5444810067E6E5 /* CHTSearchBar.m */,
+			);
+			name = CHTSearchBar;
+			sourceTree = "<group>";
+		};
+		AE9C0CB51E59E41400B06135 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AEBA00681E5445440067E6E5 /* UIColor+CHTExtend.h */,
+				AEBA00691E5445440067E6E5 /* UIColor+CHTExtend.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		AE9C0CB61E59E42D00B06135 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				AEA26CB21E558BA300E0A1A2 /* img.png */,
+				AEBA006B1E5445BB0067E6E5 /* search_clear.png */,
+				AEBA006D1E544D270067E6E5 /* glassSelectImage.png */,
+			);
+			name = Resourse;
+			sourceTree = "<group>";
+		};
 		AEBA00401E5429E20067E6E5 = {
 			isa = PBXGroup;
 			children = (
@@ -70,17 +98,13 @@
 		AEBA004B1E5429E20067E6E5 /* CHTScrollHangUpDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AEA26CB21E558BA300E0A1A2 /* img.png */,
-				AEBA006B1E5445BB0067E6E5 /* search_clear.png */,
-				AEBA006D1E544D270067E6E5 /* glassSelectImage.png */,
+				AE9C0CB61E59E42D00B06135 /* Resourse */,
+				AE9C0CB51E59E41400B06135 /* Category */,
+				AE9C0CB41E59E40000B06135 /* CHTSearchBar */,
 				AEBA004F1E5429E20067E6E5 /* AppDelegate.h */,
 				AEBA00501E5429E20067E6E5 /* AppDelegate.m */,
 				AEBA00521E5429E20067E6E5 /* ViewController.h */,
 				AEBA00531E5429E20067E6E5 /* ViewController.m */,
-				AEBA00651E5444810067E6E5 /* CHTSearchBar.h */,
-				AEBA00661E5444810067E6E5 /* CHTSearchBar.m */,
-				AEBA00681E5445440067E6E5 /* UIColor+CHTExtend.h */,
-				AEBA00691E5445440067E6E5 /* UIColor+CHTExtend.m */,
 				AEBA00551E5429E30067E6E5 /* Main.storyboard */,
 				AEBA00581E5429E30067E6E5 /* Assets.xcassets */,
 				AEBA005A1E5429E30067E6E5 /* LaunchScreen.storyboard */,
