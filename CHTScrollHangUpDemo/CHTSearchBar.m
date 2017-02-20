@@ -50,7 +50,7 @@ static NSString *const kPlaceholderText = @"请输入搜索关键词";
     UIButton *glassBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     glassBtn.frame = CGRectMake(19, (CGRectGetHeight(_searchButton.frame) - 16)/2, 16, 16);
     [_searchButton addSubview:glassBtn];
-    UIImage *image = [[UIImage imageNamed:@"glassSelectImage"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image = [[UIImage imageNamed:@"GlassIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [glassBtn setImage:image  forState:UIControlStateNormal];
     
     _placeholder = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(glassBtn.frame), (CGRectGetHeight(_searchButton.frame) - 16)/2, _searchButton.frame.size.width - CGRectGetMaxX(glassBtn.frame) , 16)];
@@ -71,7 +71,7 @@ static NSString *const kPlaceholderText = @"请输入搜索关键词";
     _clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     CGFloat width = 15;
     _clearBtn.frame = CGRectMake(CGRectGetWidth(_searchButton.frame) - width - 10, (CGRectGetHeight(_searchButton.frame) - width)/2, width, width);
-    [_clearBtn setImage:[UIImage imageNamed:@"search_clear"] forState:UIControlStateNormal];
+    [_clearBtn setImage:[UIImage imageNamed:@"ClearIcon"] forState:UIControlStateNormal];
     [_searchButton addSubview:_clearBtn];
     _clearBtn.hidden = YES;
     [_clearBtn addTarget:self action:@selector(clearContent:) forControlEvents:UIControlEventTouchUpInside];
@@ -109,9 +109,8 @@ static NSString *const kPlaceholderText = @"请输入搜索关键词";
 }
 
 #pragma mark - events
-- (void)searchBarButtonClick
-{
-        //NSLog(@"111");
+- (void)searchBarButtonClick{
+    
         if (_searchBarBlock) {
             _searchBarBlock();
         }

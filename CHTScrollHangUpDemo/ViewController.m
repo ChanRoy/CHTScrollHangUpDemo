@@ -13,8 +13,8 @@
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
-#define ALPHA_OF_NAVBAR          0.7
-#define TOP_INFO_IMAGEVIEW_TOP   80
+#define ALPHA_OF_NAVBAR         0.7 //UINavigationBar 最高的透明度
+#define LOCATION_TO_FADE        -150 //遮盖层开始出现的位置
 
 static NSString *const kCellId = @"cellId"; //reuse id
 static CGFloat const kImgHeight = 200;
@@ -218,15 +218,16 @@ static CGFloat const kImgHeight = 200;
         CGFloat offsetY = scrollView.contentOffset.y;
         
         // 随着scrollView.contentOffset.y的增大，逐渐隐藏导航栏； 为零及负值时完全显示导航栏
-        
-        if (offsetY > -(190-(190-80)/2)) {
-            _alphaY = (offsetY + 140) / 90;
+        if (offsetY > LOCATION_TO_FADE) {
+            
+            _alphaY = (offsetY - LOCATION_TO_FADE) / (-LOCATION_TO_FADE / ALPHA_OF_NAVBAR);
             if (_alphaY >= ALPHA_OF_NAVBAR) {
                 _alphaY = ALPHA_OF_NAVBAR;
             }
             
         }else{
-            _alphaY = (offsetY + 140) / 90;
+            
+            _alphaY = (offsetY - LOCATION_TO_FADE) / (-LOCATION_TO_FADE / ALPHA_OF_NAVBAR);
             if (_alphaY <= 0) {
                 _alphaY = 0.0;
             }
@@ -234,7 +235,7 @@ static CGFloat const kImgHeight = 200;
         
 //        NSLog(@"***%.2f",_alphaY);
         
-        //控制---topImageView上遮盖层效果和navigationbar上searchBar的出现和隐藏
+        //控制_topImageView上遮盖层效果和navigationbar上searchBar的出现和隐藏
         [self moveConfigTopBgView];
     
     }

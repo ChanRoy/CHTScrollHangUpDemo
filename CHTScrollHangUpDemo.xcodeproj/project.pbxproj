@@ -16,8 +16,8 @@
 		AEBA005C1E5429E30067E6E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEBA005A1E5429E30067E6E5 /* LaunchScreen.storyboard */; };
 		AEBA00671E5444810067E6E5 /* CHTSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA00661E5444810067E6E5 /* CHTSearchBar.m */; };
 		AEBA006A1E5445440067E6E5 /* UIColor+CHTExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA00691E5445440067E6E5 /* UIColor+CHTExtend.m */; };
-		AEBA006C1E5445BB0067E6E5 /* search_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBA006B1E5445BB0067E6E5 /* search_clear.png */; };
-		AEBA006E1E544D270067E6E5 /* glassSelectImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBA006D1E544D270067E6E5 /* glassSelectImage.png */; };
+		AEBA006C1E5445BB0067E6E5 /* ClearIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBA006B1E5445BB0067E6E5 /* ClearIcon.png */; };
+		AEBA006E1E544D270067E6E5 /* GlassIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBA006D1E544D270067E6E5 /* GlassIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		AEBA00661E5444810067E6E5 /* CHTSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTSearchBar.m; sourceTree = "<group>"; };
 		AEBA00681E5445440067E6E5 /* UIColor+CHTExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CHTExtend.h"; sourceTree = "<group>"; };
 		AEBA00691E5445440067E6E5 /* UIColor+CHTExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CHTExtend.m"; sourceTree = "<group>"; };
-		AEBA006B1E5445BB0067E6E5 /* search_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_clear.png; sourceTree = "<group>"; };
-		AEBA006D1E544D270067E6E5 /* glassSelectImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glassSelectImage.png; sourceTree = "<group>"; };
+		AEBA006B1E5445BB0067E6E5 /* ClearIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClearIcon.png; sourceTree = "<group>"; };
+		AEBA006D1E544D270067E6E5 /* GlassIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GlassIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				AEA26CB21E558BA300E0A1A2 /* img.png */,
-				AEBA006B1E5445BB0067E6E5 /* search_clear.png */,
-				AEBA006D1E544D270067E6E5 /* glassSelectImage.png */,
+				AEBA006B1E5445BB0067E6E5 /* ClearIcon.png */,
+				AEBA006D1E544D270067E6E5 /* GlassIcon.png */,
 			);
 			name = Resourse;
 			sourceTree = "<group>";
@@ -181,9 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEBA006E1E544D270067E6E5 /* glassSelectImage.png in Resources */,
+				AEBA006E1E544D270067E6E5 /* GlassIcon.png in Resources */,
 				AEBA005C1E5429E30067E6E5 /* LaunchScreen.storyboard in Resources */,
-				AEBA006C1E5445BB0067E6E5 /* search_clear.png in Resources */,
+				AEBA006C1E5445BB0067E6E5 /* ClearIcon.png in Resources */,
 				AEBA00591E5429E30067E6E5 /* Assets.xcassets in Resources */,
 				AEBA00571E5429E30067E6E5 /* Main.storyboard in Resources */,
 				AEA26CB31E558BA300E0A1A2 /* img.png in Resources */,

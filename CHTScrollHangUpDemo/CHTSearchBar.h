@@ -19,10 +19,7 @@ typedef void(^HomePageSearchButtonClick)(void);
 
 @property (nonatomic, assign) BOOL isHomePage;
 
-//@property (nonatomic, assign) NavgationBarShowType navgationBarShowType;
 @property (nonatomic, copy) HomePageSearchButtonClick searchBarBlock;
 @property (nonatomic, copy) void (^clearContentBlock)();
-
-//- (id)initWithFrame:(CGRect)frame houseType:(QFHKHouseType)houseType;
 
 @end
